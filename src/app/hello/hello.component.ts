@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'custom-hello',
@@ -7,6 +7,11 @@ import { Component, Input } from '@angular/core';
 })
 export class HelloComponent{
     @Input() name:string;
+    @Output() sayHello:EventEmitter<string> = new EventEmitter<string>();
 
     constructor(){ }
+
+    onClick(){
+        this.sayHello.emit('Hello!');
+    }
 }
