@@ -1,7 +1,6 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
     Let's learn Angular
   </h1>
-  <custom-hello [name]="myName"></custom-hello>
+  <custom-hello [name]="myName" (sayHello)="onSayHello($event)"></custom-hello>
 </div>
