@@ -2,7 +2,9 @@
   <h1>
     Let's learn Angular
   </h1>
-  <div>Writting '{{helloComponent.inputName}}' in HelloComponent</div>
+  <div [class.hidden]="helloComponent.inputName.length == 0">
+    Writting '{{helloComponent.inputName}}' in HelloComponent
+  </div>
   <br>
   <custom-hello #helloComponent [name]="myName" (sayHello)="onSayHello($event)"></custom-hello>
 </div>
