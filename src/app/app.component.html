@@ -6,8 +6,5 @@
     Writting '{{helloComponent.inputName}}' in HelloComponent
   </div>
   <br>
-  <custom-hello #helloComponent [name]="myName" (sayHello)="onSayHello($event)"></custom-hello>
-  <custom-hello name="Jhon"></custom-hello>
-  <custom-hello name="Peter"></custom-hello>
-  <custom-hello name="Mark"></custom-hello>
+  <custom-hello #helloComponent (sayHello)="onSayHello($event)"></custom-hello>
 </div>
