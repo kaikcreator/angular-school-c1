@@ -3,6 +3,6 @@
     <button (click)="addName()">Add name</button>
 </div>
 
-<p (click)="onClick()">
-    Hello {{name}}!
+<p *ngFor="let item of namesList; index as i" (click)="onClick()">
+    {{i}} - Hello {{item}}!
 </p>
