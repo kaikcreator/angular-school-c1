@@ -3,7 +3,7 @@
     Let's learn Angular
   </h1>
   <div [class.hidden]="helloComponent.inputName.length == 0">
-    Writting '{{helloComponent.inputName}}' in HelloComponent
+    Writting <span [ngClass]="updateNameClasses(helloComponent.inputName)">'{{helloComponent.inputName}}'</span> in HelloComponent
   </div>
   <br>
   <custom-hello #helloComponent (sayHello)="onSayHello($event)"></custom-hello>
