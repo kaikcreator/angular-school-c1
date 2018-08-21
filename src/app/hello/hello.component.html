@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="namesList.length < 5">
     <input type="text" [(ngModel)]="inputName">
     <button (click)="addName()">Add name</button>
 </div>
