@@ -7,10 +7,21 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public myName:string = 'Enrique';
+  public counter = 0;
+  public titleStyles:{};
   
   onSayHello(message){
     console.log(message);
+    this.counter++;
+    this.updateTitleStyles();
   }
+
+  updateTitleStyles(){
+    this.titleStyles = {
+      'margin-top': '40px',
+      'color': this.counter < 3 ? 'green' : 'goldenrod'
+    }
+  }  
 
   updateNameClasses(name:string){
     return {
