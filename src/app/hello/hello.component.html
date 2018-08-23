@@ -9,5 +9,5 @@
 </div>
 
 <p *ngFor="let item of namesList; index as i" (click)="onClick()">
-    {{i}} - Hello {{item}}!
+    {{i}} - Hello {{item | slice:0:1 | uppercase}}{{item | slice:1 | lowercase}}!
 </p>
