@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LoggerService } from './logger.service';
+import { GreetingsService } from './greetings.service';
 
 @Component({
   selector: 'app-root',
@@ -8,21 +8,19 @@ import { LoggerService } from './logger.service';
 })
 export class AppComponent {
   public myName:string = 'Enrique';
-  public counter = 0;
   public titleStyles:{};
 
-  constructor(private logger:LoggerService){}
+  constructor(private greetings:GreetingsService){}
   
   onSayHello(message){
-    this.logger.log(message);
-    this.counter++;
+    this.greetings.handleGreeting(message);
     this.updateTitleStyles();
   }
 
   updateTitleStyles(){
     this.titleStyles = {
       'margin-top': '40px',
-      'color': this.counter < 3 ? 'green' : 'goldenrod'
+      'color': this.greetings.counter < 3 ? 'green' : 'goldenrod'
     }
   }  
 
